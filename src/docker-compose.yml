@@ -19,6 +19,7 @@ services:
 
   identity-api:
     image: ${REGISTRY:-eshop}/identity.api:${PLATFORM:-linux}-${TAG:-latest}
+    restart: on-failure
     build:
       context: .
       dockerfile: Services/Identity/Identity.API/Dockerfile
@@ -27,6 +28,7 @@ services:
 
   basket-api:
     image: ${REGISTRY:-eshop}/basket.api:${PLATFORM:-linux}-${TAG:-latest}
+    restart: on-failure
     build:
       context: .
       dockerfile: Services/Basket/Basket.API/Dockerfile
@@ -37,6 +39,7 @@ services:
 
   catalog-api:
     image: ${REGISTRY:-eshop}/catalog.api:${PLATFORM:-linux}-${TAG:-latest}
+    restart: on-failure
     build:
       context: .
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
@@ -46,6 +49,7 @@ services:
 
   ordering-api:
     image: ${REGISTRY:-eshop}/ordering.api:${PLATFORM:-linux}-${TAG:-latest}
+    restart: on-failure
     build:
       context: .
       dockerfile: Services/Ordering/Ordering.API/Dockerfile
@@ -55,6 +59,7 @@ services:
 
   ordering-backgroundtasks:
     image: ${REGISTRY:-eshop}/ordering.backgroundtasks:${PLATFORM:-linux}-${TAG:-latest}
+    restart: on-failure
     build:
       context: .
       dockerfile: Services/Ordering/Ordering.BackgroundTasks/Dockerfile
@@ -64,6 +69,7 @@ services:
 
   payment-api:
     image: ${REGISTRY:-eshop}/payment.api:${PLATFORM:-linux}-${TAG:-latest}
+    restart: on-failure
     build:
       context: .
       dockerfile: Services/Payment/Payment.API/Dockerfile
@@ -72,6 +78,7 @@ services:
 
   webhooks-api:
     image: ${REGISTRY:-eshop}/webhooks.api:${PLATFORM:-linux}-${TAG:-latest}
+    restart: on-failure
     build:
       context: .
       dockerfile: Services/Webhooks/Webhooks.API/Dockerfile
@@ -97,6 +104,7 @@ services:
 
   webshoppingagg:
     image: ${REGISTRY:-eshop}/webshoppingagg:${PLATFORM:-linux}-${TAG:-latest}
+    restart: on-failure
     build:
       context: .
       dockerfile: ApiGateways/Web.Bff.Shopping/aggregator/Dockerfile
@@ -111,6 +119,7 @@ services:
 
   ordering-signalrhub:
     image: ${REGISTRY:-eshop}/ordering.signalrhub:${PLATFORM:-linux}-${TAG:-latest}
+    restart: on-failure
     build:
       context: .
       dockerfile: Services/Ordering/Ordering.SignalrHub/Dockerfile
